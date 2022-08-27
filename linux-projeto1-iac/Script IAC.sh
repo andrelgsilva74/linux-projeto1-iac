@@ -1,4 +1,4 @@
-#1/bin/bash
+#/bin/bash
 
 echo "Criando diretórios..."
 
@@ -14,6 +14,9 @@ groupadd GRP_VEN
 groupadd GRP_SEC
 
 echo "Criando usuários..."
+
+# Esse comando -p $(openssl passwd -crypt ******) não funciona em minha máquina virtual
+# Estou utilizando nesse script apenas para conhecimento
 
 useradd carlos -c "Carlos Alberto" -m -s /bin/bash -p $(openssl passwd -crypt 123456) -G GRP_ADM
 useradd maria -c "Maria Clara" -m -s /bin/bash -p $(openssl passwd -crypt 123456) -G GRP_ADM
